@@ -48,7 +48,9 @@ Default output format [None]: json
 * For this POC we focusing on using CLI `aws s3 sync <build folder> s3://<bucket name>` -> `aws s3 sync .\build\* s3://react-website-test-nhlanhla-01`
 
 ## AWS CI/CD Code Pipeline
-
+* [Reference Video](https://www.youtube.com/watch?v=D2p2nwKvqHs)
+* Search for `code pipeline` in the AWS console search box
+* `buildspec.yml` command yml file needed
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
