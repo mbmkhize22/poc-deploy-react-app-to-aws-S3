@@ -1,5 +1,56 @@
 # Getting Started with Create React App
 
+## AWS CLI setup
+* [Download](https://awscli.amazonaws.com/AWSCLIV2.msi)
+* [Reference video](https://www.youtube.com/watch?v=BzzCIsjrE7U)
+* Check if it installed
+```
+C:\Users\nhlanhla>aws --version
+aws-cli/2.15.25 Python/3.11.8 Windows/10 exe/AMD64 prompt/off
+```
+* Go to AWS console and create a group
+* Create an IAM user and assign a group
+* Go the user to assign security credentials, by creating access keys
+* After creating access key go to CMD and do the following
+`aws configure`
+```
+C:\Users\nhlanhla>aws configure
+AWS Access Key ID [None]: AKIAZ*********
+AWS Secret Access Key [None]: JKQSEag********
+Default region name [None]: us-east-1
+Default output format [None]: json
+```
+* Test your settings
+`aws iam list-users`
+```
+{
+    "Users": [
+        {
+            "Path": "/",
+            "UserName": "nhlanhla",
+            "UserId": "AIDAZQ3D******",
+            "Arn": "arn:aws:iam::65465****:user/nhlanhla",
+            "CreateDate": "2024-03-05T21:19:36+00:00"
+        }
+    ]
+}
+```
+
+## Create AWS S3 Bucket
+* [Reference video](https://www.youtube.com/watch?v=SHN48wTEQ5I)
+
+## Build react project
+* `npm run build` this will create a build folder with artifacts to deploy
+* Test your build `serve -s build`, this will need you to have installed `serve` globally in your workstation. To install it run `npm install -g serve`
+
+## Deploy react project to AWS using CLI
+* Note that you can also deploy this by drag and dropping the files.
+* For this POC we focusing on using CLI `aws s3 sync <build folder> s3://<bucket name>` -> `aws s3 sync .\build\* s3://react-website-test-nhlanhla-01`
+
+## AWS CI/CD Code Pipeline
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
